@@ -4,7 +4,7 @@
 
 #include <string.h>
 
-#define NROPALABRAS 87596
+#define NROPALABRAS 87580
 
 #define TAM 25
 unsigned int factorial(unsigned int n);
@@ -15,6 +15,7 @@ int bin3cmp(const void *s1,const void *s2);
 int bin4cmp(const void *s1,const void *s2);
 void generarcomb(int m, int n,char *palabra,char **com);
 void generarPerm(char * A,char ** perm);
+int contiene(char ** palabras,char *buscada,int size);
 void swap(char *a,char * b);
 int busquedaBin(char ** palabras,char *buscada,int size);
 void strBarN(char *origen);//quita el enter
@@ -105,9 +106,9 @@ int main()
 		}
 		cantCP=cantComb*cantPer;
 		printf("cantCP:%d\n",cantCP);
-		printf("Las combinaciones ocupan:%d bytes\n",sizeof(char *)*cantComb+sizeof(char)*(elem)*cantComb);
-		printf("Las permutaciones ocupan:%d bytes\n",sizeof(char *)*cantPer+sizeof(char)*(elem)*cantPer);
-		printf("tamanio necesario en memoria: %d bytes\n",sizeof(char *)*cantComb+sizeof(char)*(elem)*cantComb+sizeof(char *)*cantPer+sizeof(char)*(elem)*cantPer);
+		printf("Las combinaciones ocupan:%ld bytes\n",sizeof(char *)*cantComb+sizeof(char)*(elem)*cantComb);
+		printf("Las permutaciones ocupan:%ld bytes\n",sizeof(char *)*cantPer+sizeof(char)*(elem)*cantPer);
+		printf("tamanio necesario en memoria: %ld bytes\n",sizeof(char *)*cantComb+sizeof(char)*(elem)*cantComb+sizeof(char *)*cantPer+sizeof(char)*(elem)*cantPer);
 		printf("Tiempo estimado :%lf segundos\n",(double)cantCP*2.5/1600000);//1600000 = Hz 9=cant de operaciones
 		k=0;
 		int cont=0;
